@@ -5,10 +5,10 @@ const greet = () => {
 greet()
 
 const square = (num) => {
-    return num * num;
+    return num * num
 }
 
-console.log(square(5))
+square(4);
 
 const greetByName = (str) => {
     console.log('Hello', str)

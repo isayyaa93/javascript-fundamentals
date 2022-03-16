@@ -15,9 +15,6 @@ const functionB = () => {
     console.log('FUNCTION B HAS BEEN CALLED!')
 }
 
-const greet = (person) => {
-    console.log('Hello', person)
-}
 
 const blender = (string) => {
     return string.split('')
