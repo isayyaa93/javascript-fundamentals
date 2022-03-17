@@ -42,7 +42,8 @@ let tenant1 = {
     name: 'John Doe',
     creditScore: 400,
     salary: 15000,
-    age: 30
+    age: 30,
+    pet: 'Fido'
 }
 
 
@@ -59,13 +60,15 @@ let building = {
     laundry: false,
     allowsPets: false,
     lease: function(apt, tenant) {
-        if (apt.tenants.length ===this.bedrooms){
+        if (apt.tenants.length ===apt.bedrooms){
             return `${apt.unit} is already full.`
         }
+        if (this.allowsPets === false && tenant.pet) {
+            return `${apt.unit} is available, but you must give ${tenant.pet} up for adoption!`
+        }
         apt.tenants.push(tenant)
-        console.log(tenant.name, 'has rented out', apt.unit)
-
-    },
+        console.log(tenant.name, 'has rented out', apt.unit)}
+        ,
     apartments: [apt1, apt2, apt3]
 }
 
