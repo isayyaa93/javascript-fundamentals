@@ -1,3 +1,4 @@
+
 let apt1 = {
     bedrooms: 2,
     sqft: 50,
@@ -66,9 +67,51 @@ let building = {
         if (this.allowsPets === false && tenant.pet) {
             return `${apt.unit} is available, but you must give ${tenant.pet} up for adoption!`
         }
-        apt.tenants.push(tenant)
-        console.log(tenant.name, 'has rented out', apt.unit)}
-        ,
+        let t = apt.tenants.push(tenant)
+        console.log(tenant.name, 'has rented out', apt.unit)
+        return t
+    },
+    occupiedApts: function() {
+        // returns only the apts which have tenants inside them
+        // condition to test: apt.tenants.length
+        return this.apartments.filter((el)=>{
+            return el.tenants.length > 0
+        })
+    },
+    fullApts: function() {
+        // returns only the apts which are completely full
+        // condition to test: apt.tenants.length === apt.bedrooms
+        return this.apartments.filter((el)=>{
+            return el.tenants.length === el.bedrooms
+        })
+    },
     apartments: [apt1, apt2, apt3]
+}
+
+
+
+
+
+
+const user = {
+    name: "Isaiah Kang",
+    email: "i.say.yaa@gmail.com",
+    favoriteSports: "soccer",
+    hasKids: false
+}
+
+const greet = () => {
+    console.log("Hellow World")
+}
+
+const fruits =['papayas', 'apples', 'strawberry', 'blueberry', 'watermelon']
+
+
+
+let apartmentBuilding = {
+    streetAddress: "11 braodway",
+    zipCode: "11111",
+    petAllowed: true,
+    smokeAllowed: false
 }
 
