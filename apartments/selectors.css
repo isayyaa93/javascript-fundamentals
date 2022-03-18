@@ -1,3 +1,25 @@
+body {
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family:'Courier New';
+}
+
+
 section {
     background-color: pink;
+
+}
+
+.container > section:nth-child(3) {
+    background-color: firebrick;
+}
+
+.text {
+    font-size: 1em;
+}
+
+h2[class^="header-"] {
+    text-align: center;
 }
